@@ -29,7 +29,7 @@ app.put('/accounts/:id', (req, res) => {
 
 app.delete('/accounts/:id', (req, res) => {
     store.accounts.splice(req.params.id, 1)
-    res.status(204).send()
+    res.status(204).send(store.accounts[req.params.id])
 })
 
 app.listen(3000)
